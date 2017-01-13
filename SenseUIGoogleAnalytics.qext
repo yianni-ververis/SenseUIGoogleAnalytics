@@ -5,10 +5,10 @@
 	"version": "1.0.0",
 	"icon": "extension",
 	"author": "yianni.ververis@qlik.com",
-	"homepage": "",
+	"homepage": "https://github.com/yianni-ververis/SenseUIGoogleAnalytics",
 	"keywords": "qlik-sense, visualization, google analytics",
 	"license": "MIT",
-	"repository": "",
+	"repository": "https://github.com/yianni-ververis/SenseUIGoogleAnalytics",
 	"dependencies": {
 		"qlik-sense": ">=3.0.x"
 	}
