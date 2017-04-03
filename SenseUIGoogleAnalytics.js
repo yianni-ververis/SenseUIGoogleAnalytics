@@ -11,8 +11,7 @@
 
 define( [ 
 	"qlik"
-],
-qlik => {
+], function (qlik) {
 	// Define properties
 	var me = {
 		definition: {
@@ -50,9 +49,9 @@ qlik => {
 	// Get Engine API app for Selections
 	me.app = qlik.currApp(this);
 
-	me.paint = ($element, layout) => {
+	me.paint = function ($element, layout) {
 		var vars = {
-			v: '1.0',
+			v: '1.1',
 			name: 'SenseUIGoogleAnalytics',
 			gaCode: layout.vars.gacode,
 			currentPage: ($('.sheet-title-text').text().length) ? $('.sheet-title-text').text() : 'No Sheet Title' 
@@ -76,7 +75,7 @@ qlik => {
 			scriptPosition.parentNode.insertBefore(scriptElement, scriptPosition);
 		}
 		// Add the page tracking for every sheet
-		$element.html(`<script>ga('send', 'pageview', '${vars.currentPage}')</script>`)
+		$element.html("<script>ga('send', 'pageview', '"+vars.currentPage+"')</script>");
 		console.info('%c SenseUI-Google Analytics: ', 'color: red', 'v' + vars.v);
 		//needed for export
 		return qlik.Promise.resolve();
